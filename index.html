@@ -1,306 +1,1239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Indra Prasetya · Backend Engineer</title>
-    <meta name="description" content="Portfolio of Indra Prasetya – Backend Engineer." />
+    <meta
+      name="description"
+      content="Portfolio of Indra Prasetya – Backend Engineer."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: {
-                        primary: '#171717',
-                        secondary: '#525252',
-                        accent: '#0ea5e9'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              primary: "#171717",
+              secondary: "#525252",
+              accent: "#0ea5e9",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
     </style>
     <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     </script>
-</head>
-<body class="bg-slate-50 dark:bg-[#141414] text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
-    
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-[#141414] text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-50/80 dark:bg-[#141414]/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-xl tracking-tight">IP</a>
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
-                <a href="#about" class="hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
-                <a href="#skills" class="hover:text-slate-900 dark:hover:text-white transition-colors">Skills</a>
-                <a href="#experience" class="hover:text-slate-900 dark:hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-slate-900 dark:hover:text-white transition-colors">Contact</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors" aria-label="Toggle theme">
-                    <svg id="sun" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 4.22a1 1 0 011.415 1.415l-.708.708a1 1 0 01-1.414-1.414l.707-.707zM16 10a1 1 0 011 1h1a1 1 0 110-2h-1a1 1 0 01-1 1zm-4.22 4.22a1 1 0 01-1.415 1.415l-.708-.708a1 1 0 011.414-1.414l.707.707zM10 16a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-4.22-4.22a1 1 0 011.415-1.415l.708.708a1 1 0 01-1.414 1.414l-.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110 2h1a1 1 0 011-1zm4.22-4.22a1 1 0 01-1.415-1.415l.708-.708a1 1 0 011.414 1.414l-.707.707z" clip-rule="evenodd"></path></svg>
-                    <svg id="moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                </button>
-            </div>
+    <header
+      class="sticky top-0 z-50 bg-slate-50/80 dark:bg-[#141414]/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="flex items-center justify-center w-10 h-10 border-2 border-slate-900 dark:border-white font-bold text-xl tracking-tight"
+          >IP</a
+        >
+        <nav
+          class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-400"
+        >
+          <a
+            href="#about"
+            class="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            id="themeToggle"
+            class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
+            aria-label="Toggle theme"
+          >
+            <svg
+              id="sun"
+              class="w-5 h-5 hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg
+              id="moon"
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
         </div>
+      </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-32">
-        <!-- Hero -->
-        <section id="about" class="grid md:grid-cols-[1fr_auto] gap-12 items-center">
-            <div class="space-y-6">
-                <p class="text-accent font-medium text-sm tracking-wider uppercase">Backend Engineer</p>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">Indra Prasetya</h1>
-                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                    Designing resilient APIs, high-throughput message brokers, secure SSO/OIDC auth integration, and optimized storage layers. I turn complex logic into scalable, self-healing server infrastructure.
-                </p>
-                <div class="flex gap-4 pt-4">
-                    <a href="https://github.com/indraprasetya154" target="_blank" class="p-2 -ml-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                    </a>
-                    <a href="https://linkedin.com/in/indraprasetya154" target="_blank" class="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="./resume.pdf" class="ml-4 px-5 py-2 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors text-sm flex items-center gap-2">
-                        Download CV
-                    </a>
-                </div>
-            </div>
-            <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-white/10">
-                <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile" class="w-full h-full object-cover">
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="space-y-8">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Languages</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Go, Python, SQL, JavaScript</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Frameworks</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Fiber, Echo, FastAPI</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Datastores</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">PostgreSQL, Redis, MongoDB, ClickHouse</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Infra</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Docker, Kubernetes, GitHub Actions</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Messaging</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Kafka, WebSockets</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Auth</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Keycloak (OIDC, Token exchange)</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Observability</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Prometheus, Grafana</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">AI/Data</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">FAISS, LangGraph, Langfuse</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience" class="space-y-8">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Experience</h2>
-            <div class="space-y-10 border-l-2 border-slate-200 dark:border-[#333] ml-3 pl-8 relative">
-                
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-accent"></div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend Engineer</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1">PT Indo Trans Teknologi (TransTRACK) · Apr 2025 — Present</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600">
-                        <li>Integrated IoT tanker sensors into backend systems, enabling thousands of reliable transactions daily.</li>
-                        <li>Implemented secure SSO with Keycloak, streamlining cross-application authentication.</li>
-                        <li>Boosted Universal Data Connector (sensor data integrator) platform performance by reducing load times from 30–60s to under 1s via code refactoring and system optimization.</li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"></div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend Engineer</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1">Jabar Digital Service · Mar 2021 — Mar 2025</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600">
-                        <li>Built "Jabar AI", an AI-powered SQL agent using LangFuse to analyze provincial datasets—accelerating decision-making and data access.</li>
-                        <li>Developed a dynamic form system (JABAR Form) for creating surveys and Computer-Assisted Tests (CAT).</li>
-                        <li>Scaled the SAPAWARGA platform to handle 2,000+ daily tax payment transactions.</li>
-                        <li>Created SIDEBAR document workflow (draft to e-signature), saving IDR 50B annually in paper costs.</li>
-                        <li>Enhanced legacy backend systems using advanced caching, reducing API response times from 10s to <1s.</li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"></div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Full Stack Developer</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1">PT. Solusi Finansialku Indonesia · Sep 2019 — May 2021</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600">
-                        <li>Developed core platform APIs, user dashboards, financial records, live chat integrations (Qiscus), and e-learning modules.</li>
-                        <li>Refactored backend queries, improving performance and user experience significantly.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="space-y-8">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Projects</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project 1 -->
-                <div class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                        <div class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Freelance</div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">BunkeringServer</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">High-throughput maritime bunkering backend handling sessioned SSO (Keycloak) and telemetry data ingestion.</p>
-                        
-                        <div class="space-y-2 mb-6">
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Locks:</strong> Redis distributed locks control fuel inventory allocation.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Ingestion:</strong> Kafka queue with unique constraint hashing.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Security:</strong> Fine-grained RBAC with Keycloak resource scopes.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Go</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Postgres</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Redis</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Kafka</span>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                        <div class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">Full-Time</div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Cargo Monitoring System</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Real-time IoT telemetry ingestion hub for maritime cargo status tracking with auto-healing and instant alerting.</p>
-                        
-                        <div class="space-y-2 mb-6">
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Scale:</strong> Go MQTT-to-Kafka ingestion pipeline.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Time-Series:</strong> TimescaleDB hypertables with policy compression.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">DevOps:</strong> Self-Healing K8s configuration.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Go</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">TimescaleDB</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">K8s</span>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                        <div class="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2">Full-Time</div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sapawarga Citizen App</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">High-traffic public services backend serving millions of users, designed to absorb massive traffic spikes.</p>
-                        
-                        <div class="space-y-2 mb-6">
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Storage:</strong> S3 Offloading bypassing server bandwidth.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Protection:</strong> Rate limiting using Token Bucket algorithm.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Async:</strong> Worker Pools for PDF compilation.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Go</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Redis</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">AWS S3</span>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                        <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-2">Freelance</div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">AI SQL Agent</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">LangGraph-powered AI agent backend that generates, self-corrects, and executes SQL queries safely.</p>
-                        
-                        <div class="space-y-2 mb-6">
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Search:</strong> FAISS Semantic Search for context retrieval.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Safety:</strong> Query Guardrails blocking writes via AST parsing.</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400"><strong class="text-slate-900 dark:text-white">Sandbox:</strong> Docker Sandbox execution environment.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">Python</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">FastAPI</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">LangGraph</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300">FAISS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contact -->
-        <section id="contact" class="py-12 border-t border-slate-200 dark:border-white/10">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Contact</h2>
-            <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-xl">
-                Open to freelance and collaborations. Prefer backend-heavy work, auth/SSO, high‑throughput pipelines, and AI/data tooling.
-            </p>
-            <a href="mailto:indra@example.com" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                Email Me
+      <!-- Hero -->
+      <section
+        id="about"
+        class="grid md:grid-cols-[1fr_auto] gap-12 items-center"
+      >
+        <div class="space-y-6">
+          <p
+            class="text-accent font-medium text-sm tracking-wider uppercase text-amber-600 dark:text-amber-400"
+          >
+            Software Engineer
+          </p>
+          <h1
+            class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            Indra Prasetya
+          </h1>
+          <p
+            class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
+          >
+            Backend & Full Stack Specialist with 5+ years of experience building
+            scalable, high-performance software systems. Experienced in
+            resilient API design, event-driven architectures, secure
+            authentication, and system optimization, with a strong focus on
+            delivering reliable, maintainable, and efficient solutions across
+            SaaS, government, and IoT platforms.
+          </p>
+          <div class="flex gap-4 pt-4">
+            <a
+              href="https://github.com/indraprasetya154"
+              target="_blank"
+              class="p-2 -ml-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
             </a>
-        </section>
+            <a
+              href="https://linkedin.com/in/indraprasetya154"
+              target="_blank"
+              class="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1B3WAf7HIO7RCzofeyoqp0rtRFEwMn9ZK/view?usp=share_link"
+              target="_blank"
+              class="ml-4 px-5 py-2 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors text-sm flex items-center gap-2"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+        <div
+          class="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-white/10"
+        >
+          <img
+            src="https://avatars.githubusercontent.com/u/21275214?v=4"
+            alt="Profile"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="space-y-8">
+        <h2
+          class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          Skills
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Languages
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Go, TypeScript, JavaScript, PHP, Python, SQL
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Frameworks & APIs
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Fiber, Echo, Laravel, NuxtJS, FastAPI, Express, REST API, GraphQL
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Databases
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Postgres, MySQL, MongoDB, Redis, ClickHouse, Elasticsearch,
+              Firebase
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Cloud & DevOps
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Docker, Kubernetes, GitHub Actions, AWS, GCP
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Messaging
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Kafka, RabbitMQ, NATS, WebSockets
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Authentication
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Keycloak (OIDC, SSO, Token Exchange)
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              Observability & Quality
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Elasticsearch, ELK Stack, New Relic, Sentry, SonarQube
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm"
+          >
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+              AI Engineering
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              LangChain, LangGraph, LangFuse, FAISS, n8n
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="space-y-8">
+        <h2
+          class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          Experience
+        </h2>
+        <div
+          class="space-y-10 border-l-2 border-slate-200 dark:border-[#333] ml-3 pl-8 relative"
+        >
+          <div class="relative">
+            <div
+              class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-accent border-amber-600 dark:border-amber-400"
+            ></div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Backend Engineer
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              PT Indo Trans Teknologi (TransTRACK) · Apr 2025 — Present
+            </p>
+            <ul
+              class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600"
+            >
+              <li>
+                Integrated IoT tanker sensors into backend systems, enabling
+                thousands of reliable transactions daily.
+              </li>
+              <li>
+                Implemented secure SSO with Keycloak, streamlining
+                cross-application authentication.
+              </li>
+              <li>
+                Boosted the Universal Data Connector (sensor data integrator)
+                platform's performance by reducing load times from 30–60s to
+                under 1s through code refactoring and system optimization.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"
+            ></div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Backend Engineer
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Jabar Digital Service · Mar 2021 — Mar 2025
+            </p>
+            <ul
+              class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600"
+            >
+              <li>
+                Built "Jabar AI", an AI-powered SQL agent using LangFuse to
+                analyze provincial datasets—accelerating decision-making and
+                data access.
+              </li>
+              <li>
+                Developed a dynamic form system (JABAR Form) for creating
+                surveys and Computer-Assisted Tests (CAT) within the
+                application.
+              </li>
+              <li>
+                Scaled the SAPAWARGA platform to handle 2,000+ daily tax payment
+                transactions.
+              </li>
+              <li>
+                Created SIDEBAR document workflow (draft to e-signature), saving
+                IDR 50B annually in paper costs.
+              </li>
+              <li>
+                Enhanced legacy backend systems using advanced caching, reducing
+                API response times from 10s to &lt;1s.
+              </li>
+              <li>
+                Developed an observability dashboard from log data for strategic
+                stakeholder insights.
+              </li>
+              <li>
+                Designed and deployed an internal reservation platform with Zoom
+                Platform integration.
+              </li>
+              <li>
+                Integrated Diskominfo Jabar applications with regional
+                government agencies (OPD) across districts, cities, and the
+                provincial level.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"
+            ></div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Full-stack Engineer
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              PT. Solusi Finansialku Indonesia · Sep 2019 — May 2021
+            </p>
+            <ul
+              class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600"
+            >
+              <li>
+                Developed core platform APIs, user dashboards, financial
+                records, live chat integrations (Qiscus), and e-learning
+                modules.
+              </li>
+              <li>
+                Refactored backend queries, improving performance and user
+                experience significantly.
+              </li>
+              <li>
+                Enhanced website responsiveness, fully adaptable across various
+                screen sizes to provide a better user experience.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"
+            ></div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Full Stack Developer
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Advess Business Solution · Dec 2017 — Jan 2019
+            </p>
+            <ul
+              class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600"
+            >
+              <li>
+                Developed custom websites tailored to client requirements.
+              </li>
+              <li>
+                Maintained existing websites to ensure optimal performance and
+                stability.
+              </li>
+              <li>
+                Created comprehensive project timelines and technical designs.
+              </li>
+              <li>
+                Implemented Scrum methodology to streamline project workflows.
+              </li>
+              <li>Performed routine server maintenance.</li>
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-50 dark:bg-[#141414] border-4 border-slate-300 dark:border-[#333]"
+            ></div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Founder & Full-stack Engineer
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Sampulkreativ Technology · Mar 2014 — Dec 2022
+            </p>
+            <ul
+              class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc pl-4 marker:text-slate-300 dark:marker:text-slate-600"
+            >
+              <li>
+                Managed architecture design, database optimization, and API
+                development, improving system efficiency and performance.
+              </li>
+              <li>
+                Built and launched Digizakat, a zakat payment platform with
+                secure gateway integration.
+              </li>
+              <li>
+                Delivered MVP for VCGamers, optimizing transactions with
+                Midtrans API.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="space-y-8">
+        <h2
+          class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          Projects
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Project 1 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Bunkering & Cargo Monitoring (Maritime)
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Integrated IoT tanker sensors with backend systems to support
+                reliable, high-volume bunkering and cargo monitoring operations.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Security:</strong
+                  >
+                  Implemented secure SSO with Keycloak, streamlining
+                  authentication across multiple applications.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Performance:</strong
+                  >
+                  Built real-time IoT sensor monitoring using MQTT, Kafka, and
+                  WebSocket to support continuous data streaming and live
+                  operational visibility.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Go</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Keycloak</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Kafka</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Websocket</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-2"
+              >
+                Part-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Container Monitoring System
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Developed a real-time IoT telemetry platform for maritime cargo
+                status tracking, with automated recovery and instant alerting
+                capabilities.
+              </p>
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Integration:</strong
+                  >
+                  Integrated sensor data with the ORBCOMM API for centralized
+                  maritime cargo monitoring.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Performance:</strong
+                  >
+                  Implemented caching to reduce repeated data processing and
+                  improve application performance.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Enabled real-time monitoring through WebSocket-based
+                  communication.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >NuxtJS</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >N8n</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Websocket</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Sapawarga Citizen App
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Scaled the SAPAWARGA platform to support more than 2,000 daily
+                tax payment transactions and high-volume public service usage.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Optimization:</strong
+                  >
+                  Optimized legacy backend systems with advanced caching,
+                  reducing API response times from 10 seconds to under 1 second.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Performance:</strong
+                  >
+                  Designed systems capable of handling up to 33K requests per
+                  minute.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Integration:</strong
+                  >
+                  Integrated applications with regional government agencies
+                  across districts, cities, and provincial-level institutions.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Go</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Keycloak</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >AWS S3</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                AI SQL Agent
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Built "Jabar AI", an AI-powered SQL agent using LangFuse to
+                analyze provincial datasets and accelerate data-driven
+                decision-making.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Developed an AI chat agent capable of understanding
+                  natural-language questions, generating SQL queries, and
+                  retrieving data from large-scale datasets with responses in
+                  under 10 seconds.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Insights:</strong
+                  >
+                  Developed an observability dashboard using statistical and
+                  historical data to provide strategic insights for
+                  stakeholders.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >FastAPI</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >LangFuse</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >LangGraph</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >LangChain</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >FAISS</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >N8n</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Jabar Form
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Developed a dynamic form platform for creating surveys and
+                Computer-Assisted Tests (CAT) within the application ecosystem.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Authentication:</strong
+                  >
+                  Implemented sign-in with Google API and Jabar SSO for seamless
+                  user authentication.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white">Scale:</strong>
+                  Supported more than 1M submissions and 10K+ concurrent users.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Performance:</strong
+                  >
+                  Implemented queue-based processing to handle form submissions
+                  asynchronously, allowing users to continue without waiting for
+                  data processing to complete.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-white">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Automated answer generation and synchronization with Google
+                  Sheets.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Fast API</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >N8n</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Sistem Informasi Dokumen Elektronik Jawa Barat (SIDEBAR)
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Created SIDEBAR document workflow (draft to e-signature), saving
+                IDR 50B annually in paper costs.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Workflow:</strong
+                  >
+                  Streamlined internal document routing and approval processes
+                  across the provincial government.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Security:</strong
+                  >
+                  Implemented OpenID Connect (OIDC) for secure authentication
+                  and session management across different government
+                  applications.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Storage:</strong
+                  >
+                  Migrated existing server storage to MinIO.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Microservice</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >PHP</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >NodeJS</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >NestJS</span
+              ><span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >TypeScript</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >GraphQL</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >REST API</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >MinIO</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >NATS</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-accent mb-2"
+              >
+                Full-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Finansialku Web App
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Developed core platform APIs, user dashboards, financial record
+                management, live chat integrations with Qiscus, and e-learning
+                modules.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Performance:</strong
+                  >
+                  Refactored backend queries and optimized database operations,
+                  reducing query response times to under 1 second and
+                  significantly improving the overall user experience.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Developed live chat, live streaming, and e-learning features
+                  integrated into the platform.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white">UI/UX:</strong>
+                  Enhanced website responsiveness to provide a consistent
+                  experience across various screen sizes and devices.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >PHP</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Javascript</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >MongoDB</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Qiscus</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-2"
+              >
+                Part-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Digizakat
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Built and launched Digizakat, a digital zakat payment platform
+                with secure payment gateway integration and multiple payment
+                methods.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Architecture:</strong
+                  >
+                  Designed the system architecture, optimized database
+                  performance, and developed scalable APIs to improve overall
+                  system efficiency.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Integrated payment gateways and multiple payment methods,
+                  including bank transfers, virtual accounts, credit cards, and
+                  QRIS.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white">UI/UX:</strong>
+                  Developed a mobile-first interface to provide a smooth and
+                  accessible experience for smartphone users.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >PHP</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Javascript</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Midtrans</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 9 -->
+
+          <div
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#1c1c1c] border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div>
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-2"
+              >
+                Part-Time
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                VC Gamers
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Delivered the MVP for VCGamers, building the core platform
+                architecture and integrating secure online payment processing.
+              </p>
+
+              <div class="space-y-2 mb-6">
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Architecture:</strong
+                  >
+                  Designed the application architecture, optimized database
+                  operations, and developed APIs to support the platform's core
+                  functionality.
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-900 dark:text-white"
+                    >Feature:</strong
+                  >
+                  Integrated payment gateway functionality with support for bank
+                  transfers, virtual accounts, credit cards, and QRIS.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >PHP</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Javascript</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Postgres</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 bg-slate-100 dark:bg-white/5 rounded text-xs font-medium text-slate-600 dark:text-slate-300"
+                >Midtrans</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="py-12 border-t border-slate-200 dark:border-white/10"
+      >
+        <h2
+          class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
+        >
+          Contact
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-xl">
+          Open to freelance and collaborations. Prefer backend or full-stack
+          development, auth/SSO, high‑throughput data ingestion, AI/data
+          tooling, and developer productivity tooling.
+        </p>
+        <a
+          href="mailto:indraprasetya154@gmail.com"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            ></path>
+            <path
+              d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+            ></path>
+          </svg>
+          Email Me
+        </a>
+      </section>
     </main>
 
     <footer class="py-8 border-t border-slate-200 dark:border-white/10 mt-12">
-        <div class="max-w-5xl mx-auto px-6 text-sm text-slate-500 dark:text-slate-400 flex items-center justify-between">
-            <p>© 2026 Indra Prasetya. All rights reserved.</p>
-        </div>
+      <div
+        class="max-w-5xl mx-auto px-6 text-sm text-slate-500 dark:text-slate-400 flex items-center justify-between"
+      >
+        <p>© 2026 Indra Prasetya. All rights reserved.</p>
+      </div>
     </footer>
 
     <script>
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const sunIcon = document.getElementById('sun');
-        const moonIcon = document.getElementById('moon');
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const sunIcon = document.getElementById("sun");
+      const moonIcon = document.getElementById("moon");
 
-        if (document.documentElement.classList.contains('dark')) {
-            sunIcon.classList.remove('hidden');
-            moonIcon.classList.add('hidden');
+      if (document.documentElement.classList.contains("dark")) {
+        sunIcon.classList.remove("hidden");
+        moonIcon.classList.add("hidden");
+      }
+
+      themeToggleBtn.addEventListener("click", function () {
+        sunIcon.classList.toggle("hidden");
+        moonIcon.classList.toggle("hidden");
+
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
         }
-
-        themeToggleBtn.addEventListener('click', function() {
-            sunIcon.classList.toggle('hidden');
-            moonIcon.classList.toggle('hidden');
-
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
